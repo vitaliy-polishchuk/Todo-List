@@ -1,0 +1,39 @@
+.first_block {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.span {
+    font-size: 30px;
+}
+
+.input {
+    font-size: 28px;
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px grey;
+}
+
+.input:hover {
+    box-shadow: 1px 1px 5px grey;
+}
+
+.input:focus {
+    box-shadow: 1px 1px 12px grey;
+}
+
+.button {
+    border-radius: 5px;
+    box-shadow: 4px 3px 2px grey;
+    font-size: 28px;
+    width: 200px;
+    height: 35px;
+}
+
+.button:active {
+
+    box-shadow: 1px 1px 8px 2px grey;
+}
