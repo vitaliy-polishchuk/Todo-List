@@ -1,11 +1,14 @@
 import React from "react";
 import style from './list.module.css'
-import HeaderList from "../headerlist/headerlist";
+
 
 function List(props) {
+    const renderTaskList = () => {
+        return props.dataFromParent.map((task) => <li>{task}</li>);
+    }
     return (
         <div className={style.list_block}>
-            <p>{props.addPost}</p>
+            <ol> {renderTaskList()}</ol>
         </div>
 
     )

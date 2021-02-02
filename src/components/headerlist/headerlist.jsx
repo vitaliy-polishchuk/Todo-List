@@ -4,15 +4,17 @@ import style from './headerlist.module.css'
 function HeaderList(props) {
     let newPost = React.createRef();
 
-    let addPost = (props) => {
+    let addPost = () => {
         let text = newPost.current.value;
-        return text
+        props.parentCallback(text)
+       newPost.current.value = ''
     }
+
 
     return (
         <div className={style.first_block}>
             <span className={style.span}>Task:</span>
-            <input ref={newPost} className={style.input}></input>
+            <input ref={newPost} className={style.input}/>
             <button onClick={addPost} className={style.button}>+Add+
             </button>
         </div>
