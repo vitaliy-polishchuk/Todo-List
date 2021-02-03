@@ -1,7 +1,8 @@
 .container {
     margin: 0 auto;
-    max-width: 900px;
-    height: 5000px;
+    width: 900px;
+    min-height: 2000px;
+    height: auto;
     background: rgb(34, 193, 195);
     background: linear-gradient(0deg, rgba(34, 193, 195, 0.6432948179271709) 0%, rgba(253, 187, 45, 0.16710434173669464) 100%);
 }

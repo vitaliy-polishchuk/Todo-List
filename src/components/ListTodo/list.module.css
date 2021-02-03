@@ -1,3 +1,20 @@
 .list_block {
-    padding-top: 10px;
+    padding: 10px 0 0 20px;
+}
+
+.li_list {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    max-width: 800px;
+}
+
+.span {
+    margin: 0 0 0 720px;
+}
+
+.aa {
+    text-decoration: none;
+    color: black;
 }

@@ -7,7 +7,7 @@ function HeaderList(props) {
     let addPost = () => {
         let text = newPost.current.value;
         props.parentCallback(text)
-       newPost.current.value = ''
+        newPost.current.value = ''
     }
 
 
