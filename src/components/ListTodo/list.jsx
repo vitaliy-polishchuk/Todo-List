@@ -9,9 +9,8 @@ function List() {
             .then(response => response.json())
             .then(data => {
                 setItems(data)
-                console.log(data)
+                
             })
-        console.log('asd')
     }, []);
 
     return (
