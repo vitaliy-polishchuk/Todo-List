@@ -4,7 +4,12 @@ import style from './header.module.css'
 function Header(props) {
     return (
         <div className={style.header}>
-            <h2 className={style.h2}>Note</h2>
+            <div className={style.navbar}>
+                <div className={style.home}>Home</div>
+                <div className={style.picture}>Picture</div>
+                <div className={style.h2}>Note</div>
+            </div>
+
         </div>
     )
 
