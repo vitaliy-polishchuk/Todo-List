@@ -10,8 +10,23 @@
     max-width: 800px;
 }
 
+.li_list2 {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    max-width: 800px;
+    text-decoration: line-through;
+    color: lightcoral;
+}
+
 .span {
-    margin: 0 0 0 720px;
+    margin: 0 0 0 30px;
+    text-decoration: none;
+}
+
+.span2 {
+    margin: 0 0 0 690px;
 }
 
 .aa {
