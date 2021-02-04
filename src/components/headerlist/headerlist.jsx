@@ -1,20 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import style from './headerlist.module.css'
 
-function HeaderList(props) {
-    let newPost = React.createRef();
+function HeaderList({ parentCallback }) {
+    const [newTodo, setNewTodo] = useState('')
 
-    let addPost = () => {
-        let text = newPost.current.value;
-        props.parentCallback(text)
-        newPost.current.value = ''
+    const addPost = () => {
+        parentCallback(newTodo)
+        setNewTodo('')
     }
 
-
+    const handleChange = (e) => {
+        setNewTodo(e.target.value)
+    }
     return (
         <div className={style.first_block}>
             <span className={style.span}>Task:</span>
-            <input ref={newPost} className={style.input}/>
+            <input value={newTodo} onChange={handleChange} className={style.input}/>
             <button onClick={addPost} className={style.button}>+Add+
             </button>
         </div>
