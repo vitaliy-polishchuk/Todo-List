@@ -1,0 +1,16 @@
+.info{
+padding: 20px 50px 0 50px;
+}
+.info_text{
+font-size: 25px;
+    line-height: 40px ;
+    text-align: center;
+}
+.info_picture{
+margin: 20px 0 0 0;
+    text-align: center;
+}
+.another_info{
+    font-size: 25px;
+    margin-top:50px;
+}

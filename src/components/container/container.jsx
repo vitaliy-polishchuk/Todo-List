@@ -1,27 +1,30 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import style from './container.module.css'
 import Header from "../header/header";
 import HeaderList from './../headerlist/headerlist'
 import List from "../ListTodo/list";
-
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Info from "../info/info";
+import NoMatch from "../nomatch/nomatch";
+import Myform from "../form/form";
 
 
 function Container() {
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/')
-            .then(response => response.json())
-            .then(data => {
-                setItems(data)
-            })
-    }, []);
+    // useEffect(() => {
+    //     fetch('https://jsonplaceholder.typicode.com/todos/')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             setItems(data)
+    //         })
+    // }, []);
 
     const callbackFunction = (taskName) => {
         const newItem = {
             id: +new Date(),
             title: taskName,
-            completed: false,
+            completed: true,
         }
         let newItems = [...items, newItem]
         setItems(newItems)
@@ -47,11 +50,20 @@ function Container() {
     }
 
     return (
-        <div className={style.container}>
-            <Header/>
-            <HeaderList parentCallback={callbackFunction}/>
-            <List items={items} handleClick={handleClick} handleRemove={handleRemove} />
-        </div>
+        <BrowserRouter>
+            <div className={style.container}>
+                <Header/>
+                <Route path={['/', '/home']} exact
+                       render={(props) => (<HeaderList parentCallback={callbackFunction}/>)}/>
+                <Switch>
+                    <Route path={['/', '/home']} exact render={(props) => (
+                        <List items={items} handleClick={handleClick} handleRemove={handleRemove}/>)}/>
+                    <Route path='/info' component={Info}/>
+                    <Route path='/form' component={Myform}/>
+                    <Route path="*" component={NoMatch}/>
+                </Switch>
+            </div>
+        </BrowserRouter>
     )
 }
 
